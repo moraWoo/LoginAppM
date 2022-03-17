@@ -8,11 +8,16 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+    
+    //MARK: - IB Outlets
+    @IBOutlet var userNameTextField: UITextField!
+    @IBOutlet var passwordTextField: UITextField!
+    
+    //MARK: - Private properties
+    private let user = "User"
+    private let password = "Password"
+    
+    //MARK: - Navigation
 
 
 }
