@@ -164,7 +164,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LP9-B1-27p">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="LP9-B1-27p">
                                 <rect key="frame" x="60" y="181.5" width="200" height="200"/>
                             </imageView>
                         </subviews>
@@ -208,8 +208,26 @@
                     <view key="view" contentMode="scaleToFill" id="gXS-rb-Ie7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vSs-hi-Qpa">
+                                <rect key="frame" x="40" y="220" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="vSs-hi-Qpa" secondAttribute="height" multiplier="15:8" id="v7K-xP-BeQ"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wU7-1R-NNv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vSs-hi-Qpa" firstAttribute="centerX" secondItem="gXS-rb-Ie7" secondAttribute="centerX" id="VM6-B4-8ZQ"/>
+                            <constraint firstItem="vSs-hi-Qpa" firstAttribute="width" secondItem="gXS-rb-Ie7" secondAttribute="height" multiplier="30:71" id="YKR-dE-rzj"/>
+                            <constraint firstItem="vSs-hi-Qpa" firstAttribute="centerY" secondItem="gXS-rb-Ie7" secondAttribute="centerY" id="psU-To-Rnu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5j2-qx-zC1">
                         <barButtonItem key="rightBarButtonItem" title="More Info" id="ovb-cg-0xv">
@@ -244,7 +262,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="UserPhoto" width="640" height="640"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

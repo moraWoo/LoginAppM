@@ -17,21 +17,33 @@ class LoginViewController: UIViewController {
     //MARK: - Private properties
     private let user = "User"
     private let password = "Password"
+    
+    private var viewControllers: [UIViewController]!
    
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let welcomeVC = WelcomeViewController()
+        let aboutUserVC = UserInfoViewController()
+        
+        let navigationVC = UINavigationController(rootViewController: welcomeVC)
+        
+        viewControllers = [
+            welcomeVC,
+            aboutUserVC
+        ]
+        
         guard let tabBarController = segue.destination as? UITabBarController else {
             return
         }
         
         for viewController in viewControllers {
             if let welcomeVC = viewController as? WelcomeViewController {
+//                welcomeVC.
                 return
             } else if let navigationVC = viewController as? UINavigationController {
                 let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
                 
             }
-            
         }
     }
     
