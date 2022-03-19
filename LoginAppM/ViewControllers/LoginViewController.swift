@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 class LoginViewController: UIViewController {
     
@@ -16,14 +17,24 @@ class LoginViewController: UIViewController {
     //MARK: - Private properties
     private let user = "User"
     private let password = "Password"
-    
+   
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else {
+        guard let tabBarController = segue.destination as? UITabBarController else {
             return
         }
-        welcomeVC.user = user
+        
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                return
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
+                
+            }
+            
+        }
     }
+    
     //MARK: IBActions
     @IBAction func logInButtonPressed() {
         guard userNameTextField.text == user, passwordTextField.text == password else {
