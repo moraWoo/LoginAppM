@@ -8,22 +8,22 @@
 struct User {
     let login: String
     let password: String
-    let person: [Person]
+    let person: Person
     
-    static func getInfoAboutPerson() -> [User] {
-        [
+    static func getInfoAboutPerson() -> User {
+        (
             User(
                 login: "User",
                 password: "Password",
-                person: [
+                person: (
                     Person(
                         name: "Ildar",
                         surname: "Khabibullin",
                         personalInfo: "Мне 36. Я инженер. Проектирую дома. Но хочу стать программистом"
                     )
-                ]
+                )
             )
-        ]
+        )
     }
 }
 

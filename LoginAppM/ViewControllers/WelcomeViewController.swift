@@ -26,16 +26,37 @@ class WelcomeViewController: UIViewController {
         alpha: 1
     )
     
+    private var viewControllers: [UIViewController]!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-
         let infoAboutUser = User.getInfoAboutPerson()
-        print("Welcome, \(infoAboutUser)!")
 
+        welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
+
+        let welcomeVC = WelcomeViewController()
+        let aboutUserVC = UserInfoViewController()
+        let navigationVC = UINavigationController(rootViewController: welcomeVC)
+
+        viewControllers = [
+            welcomeVC,
+            aboutUserVC,
+            navigationVC
+        ]
         
-       
-        welcomeLabel.text = "Welcome, \(infoAboutUser)!"
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+
+                return
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
+                
+            }
+            
+            
+        }
+
     }
 }
 

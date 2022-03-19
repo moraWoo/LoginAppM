@@ -1,5 +1,5 @@
 //
-//  TabBarViewController.swift
+//  NavigationBar.swift
 //  LoginAppM
 //
 //  Created by Ildar Khabibullin on 19.03.2022.
@@ -7,6 +7,6 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
-
+class NavigationBar: UINavigationBar {
+    
 }

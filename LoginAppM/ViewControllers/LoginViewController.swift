@@ -15,41 +15,44 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     //MARK: - Private properties
-    private let user = "User"
-    private let password = "Password"
+//    private let user = "User"
+//    private let password = "Password"
+    private let infoAboutUser = User.getInfoAboutPerson()
     
     private var viewControllers: [UIViewController]!
    
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = WelcomeViewController()
-        let aboutUserVC = UserInfoViewController()
-        
-        let navigationVC = UINavigationController(rootViewController: welcomeVC)
-        
-        viewControllers = [
-            welcomeVC,
-            aboutUserVC
-        ]
-        
-        guard let tabBarController = segue.destination as? UITabBarController else {
-            return
-        }
-        
-        for viewController in viewControllers {
-            if let welcomeVC = viewController as? WelcomeViewController {
-//                welcomeVC.
-                return
-            } else if let navigationVC = viewController as? UINavigationController {
-                let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
-                
-            }
-        }
+//        let welcomeVC = WelcomeViewController()
+//        let aboutUserVC = UserInfoViewController()
+//
+//        let navigationVC = UINavigationController(rootViewController: welcomeVC)
+//
+//        viewControllers = [
+//            welcomeVC,
+//            aboutUserVC,
+//            navigationVC
+//        ]
+//
+//        guard let tabBarController = segue.destination as? UITabBarController else {
+//            return
+//        }
+//
+//        for viewController in viewControllers {
+//            if let welcomeVC = viewController as? WelcomeViewController {
+//                return
+//            } else if let navigationVC = viewController as? UINavigationController {
+//                let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
+//            }
+//
+//            navigationVC.title = "\(infoAboutUser.person.name) \(infoAboutUser.person.surname)"
+//        }
     }
     
     //MARK: IBActions
     @IBAction func logInButtonPressed() {
-        guard userNameTextField.text == user, passwordTextField.text == password else {
+
+        guard userNameTextField.text == infoAboutUser.login, passwordTextField.text == infoAboutUser.password else {
             showAlert(
                 title: "Invalid login or password",
                 message: "Please, enter correct login and password",
@@ -62,8 +65,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func showAuthorizationData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Oops!", message: "Your name is \(user) 😉")
-        : showAlert(title: "Oops!", message: "Your password is \(password) 😉")
+        ? showAlert(title: "Oops!", message: "Your name is \(infoAboutUser.login) 😉")
+        : showAlert(title: "Oops!", message: "Your password is \(infoAboutUser.password) 😉")
     }
     
     @IBAction func unwind(segue: UIStoryboardSegue) {
