@@ -23,30 +23,35 @@ class LoginViewController: UIViewController {
    
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let welcomeVC = WelcomeViewController()
-//        let aboutUserVC = UserInfoViewController()
-//
-//        let navigationVC = UINavigationController(rootViewController: welcomeVC)
-//
+
+        guard let tabBarController = segue.destination as? UITabBarController else {
+            return
+        }
+        
+//        let homeTabBar = tabBarController.tabBarItem
+//        let userTabBar = tabBarController.tabBarItem
+        
+//        let welcomeVC: WelcomeViewController
+//        let aboutUserVC: UserInfoViewController
+//        let navigationVC: UINavigationController
+
 //        viewControllers = [
 //            welcomeVC,
 //            aboutUserVC,
 //            navigationVC
 //        ]
-//
-//        guard let tabBarController = segue.destination as? UITabBarController else {
-//            return
-//        }
-//
-//        for viewController in viewControllers {
-//            if let welcomeVC = viewController as? WelcomeViewController {
-//                return
-//            } else if let navigationVC = viewController as? UINavigationController {
-//                let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
-//            }
-//
-//            navigationVC.title = "\(infoAboutUser.person.name) \(infoAboutUser.person.surname)"
-//        }
+
+        for viewController in viewControllers {
+            if let welcomeVC = viewController as? WelcomeViewController {
+                return
+            } else if let navigationVC = viewController as? UINavigationController {
+                let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
+            }
+
+        }
+//        welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
+//        welcomeVC.welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
+//        WelcomeViewController.welcomeLabel
     }
     
     //MARK: IBActions

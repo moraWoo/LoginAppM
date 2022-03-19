@@ -251,7 +251,7 @@
         <scene sceneID="rbJ-zm-I0A">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LYL-nC-zDu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="User" image="person.fill" catalog="system" id="5bK-6p-4Qt"/>
+                    <tabBarItem key="tabBarItem" tag="1" title="User" image="person.fill" catalog="system" id="5bK-6p-4Qt"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SRk-Gg-1VY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

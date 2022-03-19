@@ -33,30 +33,7 @@ class WelcomeViewController: UIViewController {
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         let infoAboutUser = User.getInfoAboutPerson()
 
-        welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
-
-        let welcomeVC = WelcomeViewController()
-        let aboutUserVC = UserInfoViewController()
-        let navigationVC = UINavigationController(rootViewController: welcomeVC)
-
-        viewControllers = [
-            welcomeVC,
-            aboutUserVC,
-            navigationVC
-        ]
-        
-        for viewController in viewControllers {
-            if let welcomeVC = viewController as? WelcomeViewController {
-
-                return
-            } else if let navigationVC = viewController as? UINavigationController {
-                let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
-                
-            }
-            
-            
-        }
-
+//        welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
     }
 }
 
