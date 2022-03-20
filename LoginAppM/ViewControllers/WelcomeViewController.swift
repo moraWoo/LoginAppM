@@ -32,8 +32,8 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
         let infoAboutUser = User.getInfoAboutPerson()
-
-//        welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
+        
+        welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
     }
 }
 

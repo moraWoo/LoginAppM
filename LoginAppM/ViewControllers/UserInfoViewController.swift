@@ -13,7 +13,6 @@ class UserInfoViewController: UIViewController {
     override func viewDidLoad() {
         let infoAboutUser = User.getInfoAboutPerson()
         userInfoTextView.text = infoAboutUser.person.personalInfo
-//        navigationController?.title = "\(infoAboutUser.person.name) \(infoAboutUser.person.surname)"
-
+        self.title = "\(infoAboutUser.person.name) \(infoAboutUser.person.surname)"
     }
 }

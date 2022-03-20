@@ -15,44 +15,32 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     
     //MARK: - Private properties
-//    private let user = "User"
-//    private let password = "Password"
     private let infoAboutUser = User.getInfoAboutPerson()
-    
     private var viewControllers: [UIViewController]!
-   
+
+    
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        guard let tabBarController = segue.destination as? UITabBarController else {
-            return
-        }
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        viewControllers = tabBarController.viewControllers
         
-//        let homeTabBar = tabBarController.tabBarItem
-//        let userTabBar = tabBarController.tabBarItem
+//        for viewController in viewControllers {
+//            guard let welcomeVC = viewController as? WelcomeViewController else { return }
+//            guard let navigationVC = viewController as? UINavigationController else { return }
+//            guard let aboutUserVC = navigationVC.topViewController as? UserInfoViewController else { return }
+//        }
         
-//        let welcomeVC: WelcomeViewController
-//        let aboutUserVC: UserInfoViewController
-//        let navigationVC: UINavigationController
+}
+//        for viewController in viewControllers {
+//            if let welcomeVC = viewController as? WelcomeViewController {
+//                return
+//            } else if let navigationVC = viewController as? UINavigationController {
+//                let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
+//            }
+        
+//            welcomeVC.welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
+//        }
 
-//        viewControllers = [
-//            welcomeVC,
-//            aboutUserVC,
-//            navigationVC
-//        ]
-
-        for viewController in viewControllers {
-            if let welcomeVC = viewController as? WelcomeViewController {
-                return
-            } else if let navigationVC = viewController as? UINavigationController {
-                let aboutUserVC = navigationVC.topViewController as? UserInfoViewController
-            }
-
-        }
-//        welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
-//        welcomeVC.welcomeLabel.text = "Welcome, \(infoAboutUser.person.name) \(infoAboutUser.person.surname)!"
-//        WelcomeViewController.welcomeLabel
-    }
     
     //MARK: IBActions
     @IBAction func logInButtonPressed() {
@@ -66,6 +54,7 @@ class LoginViewController: UIViewController {
             return
         }
         performSegue(withIdentifier: "openWelcomeVC", sender: nil)
+
     }
     
     @IBAction func showAuthorizationData(_ sender: UIButton) {
