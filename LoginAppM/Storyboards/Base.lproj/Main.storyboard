@@ -100,7 +100,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="userInfoTextView" destination="vSs-hi-Qpa" id="nMd-Tb-gYE"/>
+                        <outlet property="userInfoTextView" destination="vSs-hi-Qpa" id="fau-uH-CvJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1nq-VU-zWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -186,15 +186,15 @@
             </objects>
             <point key="canvasLocation" x="30" y="70"/>
         </scene>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="PGG-9n-Icu">
             <objects>
-                <viewController id="P9x-69-GHd" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Eiq-vx-ooz">
+                <viewController id="P9x-69-GHd" customClass="ImageViewController" customModule="LoginAppM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Eiq-vx-ooz" customClass="Ima">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="LP9-B1-27p">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LP9-B1-27p">
                                 <rect key="frame" x="60" y="181.5" width="200" height="200"/>
                             </imageView>
                         </subviews>
@@ -208,6 +208,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="VdO-7L-Oof"/>
+                    <connections>
+                        <outlet property="imageView" destination="LP9-B1-27p" id="otG-Pg-lHc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBW-RS-dWB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -257,7 +260,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="UserPhoto" width="640" height="640"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

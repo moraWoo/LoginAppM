@@ -9,10 +9,16 @@ import UIKit
 
 class UserInfoViewController: UIViewController {
     @IBOutlet var userInfoTextView: UITextView!
+    var userNew: User!
     
     override func viewDidLoad() {
-        let infoAboutUser = User.getInfoAboutPerson()
-        userInfoTextView.text = infoAboutUser.person.personalInfo
-        self.title = "\(infoAboutUser.person.name) \(infoAboutUser.person.surname)"
+        super.viewDidLoad()
+        userInfoTextView.text = userNew.person.personalInfo
+        title = userNew.person.fullName
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let imageVC = segue.destination as? ImageViewController else { return }
+        imageVC.userNew = userNew
     }
 }
